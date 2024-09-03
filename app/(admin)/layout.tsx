@@ -3,23 +3,31 @@
 // and invisible folder
 // This layout will only apply the layout to roots under admin
 
+import { auth } from "@clerk/nextjs/server";
 import Header from "../../components/Header";
 import Sidebar from "../../components/Sidebar";
+import '../globals.css'; 
+import { redirect } from "next/navigation";
 
-function AdminLayout({
+async function AdminLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const {userId} = await auth();
+  if (!userId) {
+    return redirect('/login')
+  }
   return (
-    <div className="flex flex-col flex-1">
+    <div className="flex flex-col flex-1 min-h-screen overflow-y-hidden">
       {/* Header */}
       <Header />
       {/* flex-1 make it take up all the space */}
-      <div className="flex flex-col lg:flex-row bg-gray-200 items-center justify-center">
+      <div className="flex flex-row items-start justify-start h-full">
         {/* Sidebar */}
         <Sidebar/>
-        <div className="flex flex-row w-full items-center justify-evenly max-w-5xl mx-2">
+        <div className="flex flex-row w-full h-full
+        items-center justify-evenly max-w-5xl mx-2">
           {/* children */}
           {children}
         </div>

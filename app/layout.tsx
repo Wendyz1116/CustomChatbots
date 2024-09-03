@@ -22,7 +22,7 @@ export default function RootLayout({
     <ApolloProviderWrapper>
       <ClerkProvider>
         <html lang="en">
-          <body className="min-h-screen flex">
+          <body className="min-h-screen flex h-full">
             {children}
             {/* Toaster */}
           </body>

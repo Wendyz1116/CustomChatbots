@@ -1,4 +1,3 @@
-import { gql } from "@apollo/client";
 import client from "../../graphql/apolloClient";
 import {
   INSERT_CHAT_SESSION,
@@ -53,14 +52,13 @@ async function startNewChat(
         chat_session_id: chatSessionId,
         sender: "ai",
         // TODO maybe change to dynamic message we want to send in backend
-        content: `Welcome ${guestName}\n How can I assist you today?`,
+        content: `${guestName ? `Welcome ${guestName},` : "Welcome,"} how can I assist you today?`,
       },
     });
 
     console.log("chat session successfully started");
     return chatSessionId;
   } catch (error) {
-    console.log("ahhh")
     console.error("Error starting chat session", error);
   }
 }

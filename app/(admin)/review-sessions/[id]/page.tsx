@@ -29,7 +29,12 @@ async function ReviewSession({ params: { id } }: { params: { id: string } }) {
   return (
     <div>
       <div className="flex-1 p-10 pb-24">
-        <h1 className="text-xl_lg:text-3xl font-semibold">Session Review</h1>
+        {/* <h1 className="heading-lg"> Large </h1>
+        <h1 className="heading-md-bold"> bold md </h1>
+        <h2 className="heading-md"> heading md </h2>
+        <p className="body-xs"> xs </p>
+        <p className="body-xs-muted"> muted </p> */}
+        <h1 className="text-xl lg:text-3xl font-semibold">Session Review</h1>
         <div
           className="font-light text-xs text-gray-400 mt-2"
         >
@@ -44,10 +49,10 @@ async function ReviewSession({ params: { id } }: { params: { id: string } }) {
         <hr className="my-10" />
         <Messages
           messages={messages}
-          chatSessionId={chatSessionId}
-          chatbotName={name}
-          guestName={guestName}
+          chatbotName={name}          
         />
+
+
       </div>
     </div>
   );

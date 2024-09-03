@@ -1,18 +1,18 @@
 import Link from "next/link";
 import Avatar from "./Avatar";
 import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import Icon from "./Icon";
 
 function Header() {
   return (
-    <header className="bg-white w-full shadow-sm text-gray-800 flex justify-between p-5">
-      {/* Take it backe to /route or home */}
-      <Link href="/" className="flex items-center text-4xl font-thin">
-        {/* Avatar */}
-        <Avatar seed="hello world" className="mx-2" />
-        <div className="space-y-2 mx-2 flex flex-col">
-          <div className="text-md font-bold">Custom Chatbots</div>
-          <div className="text-sm font-thin">
-            Your Customizable AI Chat Agent
+    <div className="w-full h-20 max-h-20 min-h-20 bg-base-200 shadow-sm text-base-content flex justify-between p-4">
+      {/* Reroute to the home page at "/" */}
+      <Link href="/" className="flex items-center font-thin">
+        <Icon name="bot-message-square" className="h-12 w-12"/>
+        <div className="space-y-1 mx-2 flex flex-col">
+          <div className="text-md font-bold text-base-content">Custom Chatbots</div>
+          <div className="text-xs font-thin text-base-content">
+            Your Own Customizable AI Chatbots
           </div>
         </div>
       </Link>
@@ -25,7 +25,7 @@ function Header() {
           <SignInButton />
         </SignedOut>
       </div>
-    </header>
+    </div>
   );
 }
 

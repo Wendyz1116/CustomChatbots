@@ -60,7 +60,10 @@ async function ViewChatbot() {
       <ul className="flex flex-col space-y-5">
         {sortedChatbotsByUser.map((chatbot) => (
           <Link key={chatbot.id} href={`/edit-chatbot/${chatbot.id}`}>
-            <li className="relative p-3 bg-white border rounded-md max-w-3xl">
+            <li
+              className="relative p-3 bg-white border rounded-md max-w-3xl"
+              key={chatbot.id}
+            >
               <div className="flex items-center space-x-3 mx-2">
                 <Avatar
                   seed={chatbot.name}
@@ -80,7 +83,10 @@ async function ViewChatbot() {
                   )}
 
                   {chatbot.chatbot_characteristics.map((characteristic) => (
-                    <li className="list-disc break-words">
+                    <li
+                      className="list-disc break-words"
+                      key={characteristic.id}
+                    >
                       {characteristic.content}
                     </li>
                   ))}

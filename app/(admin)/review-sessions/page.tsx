@@ -51,7 +51,7 @@ async function ReviewSessions() {
     <div className="flex-1 px-10">
       <div className="text-xl lg:text-3xl font-bold mt-10">Chat Sessions</div>
       <div className="mb-5">
-        Review all the chat sessions the chat bots have had with your customers.
+        Review all the chat sessions the chatbots have had with your customers.
       </div>
       <ChatBotSessions chatbots={sortedChatbotsByUser} />
     </div>

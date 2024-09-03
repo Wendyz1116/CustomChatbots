@@ -19,14 +19,15 @@ function ChatBotSessions({ chatbots }: { chatbots: Chatbot[] }) {
   }, [chatbots]);
 
   return (
-    <div className="bg-white rounded-md">
+    <div className="rounded-md bg-base-200">
       {sortedChatbots.map((chatbot) => {
         const hasSessions = chatbot.chat_sessions.length > 0;
         console.log("sessions", chatbot.chat_sessions);
         return (
           <div className="collapse collapse-arrow">
             <input type="radio" name="my-accordion" />
-            <div className="collapse-title flex justify-center items-center my-2 space-x-3 mx-2 mr-2">
+            <div className="collapse-title flex justify-center items-center
+            my-2 space-x-3 mx-2 mr-2">
               <Avatar
                 seed={chatbot.name}
                 className="w-10 h-10 contain-content"
@@ -40,14 +41,15 @@ function ChatBotSessions({ chatbots }: { chatbots: Chatbot[] }) {
                 </div>
               </div>
             </div>
-            {/* Content of the Accordion */}
+
+            {/* Sessions content (inside acordians) */}
             <div className="collapse-content">
-              <div className="space-y-5 p-5 bg-base rounded-md">
+              <div className="space-y-5 p-5 bg-base-200 rounded-md">
                 {chatbot.chat_sessions.map((session) => (
                   <Link
                     href={`/review-sessions/${session.id}`}
                     key={session.id}
-                    className="relative p-10 bg-primary text-white rounded-md block"
+                    className="relative p-10 bg-primary text-base-100 rounded-md block"
                   >
                     <p className="text-lg font-bold">
                       {session.guests?.name || "Anonymous"}

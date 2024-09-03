@@ -17,8 +17,21 @@ export const CREATE_CHATBOT = gql`
   }
 `;
 
-// TODO fig out error
+export const REMOVE_CHATBOT = gql`
+  mutation RemoveChatbot(
+    $chatbotId: Int!
+  ) {
+    deleteChatbots(
+      id: $chatbotId
+    ) {
+      id
+    }
+  }
+`;
+
+// Figured out error
 // ApolloError: Server response was missing for query 'AddCharacteristic'.
+// The created date was required
 
 export const ADD_CHARACTERISTIC = gql`
   mutation AddCharacteristic(
@@ -38,9 +51,21 @@ export const ADD_CHARACTERISTIC = gql`
   }
 `;
 
+export const REMOVE_CHARACTERISTIC = gql`
+  mutation RemoveCharacteristic(
+    $charactertisticId: Int!
+  ) {
+    deleteChatbot_characteristics(
+      id: $charactertisticId
+    ) {
+      id
+    }
+  }
+`;
+
 // NOTE what does the $ mean, a copy? or ref it as a str
 export const INSERT_MESSAGE = gql`
-  mutation insertMessages(
+  mutation InsertMessages(
     $created_at: DateTime!
     $chat_session_id: Int!
     $content: String!

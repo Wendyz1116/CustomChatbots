@@ -51,21 +51,21 @@ function CreateChatbot() {
   }
 
   return (
-    <div className="flex flex-col w-full items-center justify-center md:flex-row md:space-x-10 p-2">
-      <div className="space-y-2 flex items-center justify-center flex-col rounded-md mx-10 p-5 bg-white">
-        <Avatar seed="create-chatbot" />
-        <div className=" text-xl lg:text-3xl font-bold">Create</div>
-        <div className="font-light">
-          Create a new chatbot to assist you in your conversations with your
-          customers.
-        </div>
-        <form className="flex flex-col md:flex-row " onSubmit={handleSubmit}>
+    <div className="flex flex-col w-full items-center justify-center md:flex-row md:space-x-10 p-2 h-full">
+      <div className="space-y-2 flex items-center justify-center flex-col">
+        <h1 className="heading-lg">Create a new chatbot!</h1>
+        <p className="body-xs-muted text-center my-4">
+          Create a new chatbot to personalize your conversations with customers.
+          <br />
+          Provide specialized assistance and support tailored to their needs.
+        </p>
+        <form className="flex flex-row" onSubmit={handleSubmit}>
           <input
             type="text"
             required
             onChange={(e) => setName(e.target.value)}
-            placeholder="Chatbot Name..."
-            className="input input-bordered w-full input-sm bg-inherit focus-within:outline-none focus-within:border-primary"
+            placeholder="Chatbot name"
+            className="input input-bordered w-full input-sm focus-within:outline-none focus-within:border-primary"
           />
           {/* TODO have the input say the curr name */}
           <button
@@ -76,7 +76,7 @@ function CreateChatbot() {
             {loading ? "Creating Chatbot..." : "Create Chatbot"}
           </button>
         </form>
-        <p className="text-gray-300 mt-5">Example: Customer Support Chatbot</p>
+        <p className="body-xs-muted text-gray-300 mt-4">Example: Customer Support Chatbot</p>
       </div>
     </div>
   );

@@ -61,41 +61,38 @@ export async function POST(req: NextRequest) {
     const previousMessages = messagesData.chat_sessions.messages;
     // OpenAi expect data in a certain format
     // Need to change the message data into format it can understand
-    console.log("prev", previousMessages);
-
-    const formattedPreviousMessages = previousMessages.map((message) => ({
+    const formattedPreviousMessages = previousMessages.map((message: { content: string, sender: string }) => ({
       role: message.sender === "ai" ? "system" : "user",
-      name: message.sender === "ai" ? "system" : name,
       content: message.content,
     }));
-    console.log("formated", formattedPreviousMessages);
 
     // Combine characteristics into a prompt
     const systemPrompt = chatbot.chatbot_characteristics
-      .map((c) => c.content)
+      .map((characteristic: { content: string }) => characteristic.content)
       .join("+");
 
-    console.log("prompt", systemPrompt);
+    console.log("prompt", formattedPreviousMessages);
 
-    const messages: ChatCompletionMessageParam[] = [
+    
+
+    const messages = [
       {
         role: "system",
-        // name: "system",
         content: `You are a helpful assistant talking to ${name}. If a generic question
         is asked which is not relevant or in the same scope or domain as the points in
-        mentioned in the key information section, kindly inform the user theyre only 
-        allowed to search for the specified content. Use Emoji's where possible. Here
+        mentioned in the key information section, kindly inform the user they should 
+        focus on asking about the specified content. Use Emoji's where possible. Here
         is some key information that you need to be aware of, these are elements you
         may be asked about: ${systemPrompt}`,
       },
       ...formattedPreviousMessages,
       {
         role: "user",
-        name: name,
         content: content,
       },
     ];
 
+    console.log("messages", messages)
     // Use the completetion api
 
     const groqResponse = await groq.chat.completions.create({
