@@ -15,7 +15,7 @@ Check out the live application [here](https://custom-chatbots.vercel.app/login)!
 
 ## Description
 
-Custom AI Chatbot Creator offers a sophisticated platform for creating and managing AI chatbots, inspired by Sonny Sangha's AI Help Bot. Leveraging the Groq API and enhancing PostgreSQL queries, this project ensures a high-performance chatbot experience.
+Custom AI Chatbot Creator, inspired by Sonny Sangha's AI Help Bot, allows users to build and customize AI chatbots. The project integrates the Groq API due to the discontinuation of free access to the OpenAI API and includes updates to PostgreSQL queries and mutations to resolve errors from the original implementation.
 
 ## New Features and Enhancements
   
