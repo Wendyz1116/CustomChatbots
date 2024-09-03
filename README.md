@@ -2,7 +2,7 @@
 
 ## Deployed Site
 
-Check out the live application [here](https://custom-chatbots.vercel.app/login)!
+Check out the deployed application [here](https://custom-chatbots.vercel.app/login)!
 
 ## Technologies
 
