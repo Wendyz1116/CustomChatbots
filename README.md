@@ -1,6 +1,11 @@
 # Custom AI Chatbot Creator
 
+## Deployed Site
+
+You can access the live site [here](https://custom-chatbots.vercel.app/login).
+
 ## Technologies
+
 - **React**
 - **Next.js**
 - **TypeScript**
@@ -9,24 +14,9 @@
 - **Groq API** (formerly OpenAI API)
 
 ## Description
-Custom AI Chatbot Creator is inspired by Sonny Sangha's AI Help Bot. This project integrates the Groq API due to the discontinuation of free access to the OpenAI API. It also includes updates to PostgreSQL queries and mutations to resolve errors from the original implementation.
 
-## Note
-UI design is still being finalized.
+Custom AI Chatbot Creator, inspired by Sonny Sangha's AI Help Bot, allows users to build and customize AI chatbots. The project integrates the Groq API due to the discontinuation of free access to the OpenAI API and includes updates to PostgreSQL queries and mutations to resolve errors from the original implementation.
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Features
 
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
+- **Custom AI Chatbot Creation**: Design and deploy personalized chatb
